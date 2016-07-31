@@ -1,23 +1,19 @@
 package com.leonardorifeli.ca.clock.model;
 
-public class Angle
-{
+public class Angle {
 
     private final Double angle;
 
-    public setAngle(Double angle)
-    {
+    public Angle(Double angle) {
         this.angle = angle;
     }
 
-    public Double getAngle()
-    {
+    public Double getAngle() {
         return this.angle;
     }
 
     @Override
-    public boolean equals(Object o)
-    {
+    public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
@@ -27,15 +23,13 @@ public class Angle
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         return getAngle().hashCode();
     }
 
     @Override
-    public String toString()
-    {
-        return "Angle{angle="+this.angle+"}";
+    public String toString() {
+        return "Angle{angle=" + this.angle + "}";
     }
 }
 
