@@ -5,8 +5,8 @@ import org.slf4j.LoggerFactory;
 
 public class Time {
 
-    private final Integer hour;
-    private final Integer minute;
+    private Integer hour;
+    private Integer minute;
     private Angle angle;
 
     public Time(final Integer hour) throws IllegalArgumentException {
