@@ -9,13 +9,16 @@ public class Time {
     private final Integer minute;
     private Angle angle;
 
-    public Time(final Integer hour, final Integer minute) throws IllegalArgumentException {
+    public Time(final Integer hour) throws IllegalArgumentException {
+        this.setHour(hour);
+    }
+
+    public void setHour(final Integer hour) throws IllegalArgumentException {
         if(hour == null || hour < 0) {
             throw new IllegalArgumentException("Invalid value for hour");
         }
 
         this.hour = (hour > 12) ? 12 - (24 - hour) : hour;
-        this.minute = (minute == null || minute < 0) ? 0 : minute;
     }
 
     public Integer getHour() {
