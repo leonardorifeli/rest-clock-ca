@@ -21,7 +21,7 @@ public class TimeTest
     @Test
     public void testValidMinute() {
         try {
-            Time time = new Time(13, -1);
+            Time time = new Time(13, 15);
 
             assertTrue(true);
         } catch (IllegalArgumentException e) {
