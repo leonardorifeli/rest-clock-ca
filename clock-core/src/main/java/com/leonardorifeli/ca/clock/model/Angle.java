@@ -1,18 +1,23 @@
-package com.leonardorifeli.ca.clock;
+package com.leonardorifeli.ca.clock.model;
 
-public class Angle {
+public class Angle
+{
+
     private final Double angle;
 
-    public setAngle(Double angle) {
+    public setAngle(Double angle)
+    {
         this.angle = angle;
     }
 
-    public Double getAngle() {
+    public Double getAngle()
+    {
         return this.angle;
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+    {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
