@@ -11,7 +11,7 @@ public class Time {
 
     public Time(final Integer hour, final Integer minute) throws IllegalArgumentException
     {
-        if (hour == null || hour < 0) throw new IllegalArgumentException('Invalid value for hour. Plase, check.');
+        if (hour == null || hour < 0) throw new IllegalArgumentException('Invalid value for hour.');
 
         this.hour = (hour > 12) ? 12 - (24 - hour) : hour;
         this.minute = (minute == null || minute < 0) ? 0 : minute;
@@ -38,6 +38,20 @@ public class Time {
         if(!getHour().equals(time.getHour())) return false;
 
         return getMinute().equals(time.getMinute());
+    }
+
+    @Override
+    public boolean hashCode()
+    {
+        int result = getHour().hashCode();
+        result = 31 * result + getMinute().hashCode();
+        return result;
+    }
+
+    @Override
+    public String toString()
+    {
+
     }
 
 }
