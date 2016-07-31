@@ -1,4 +1,4 @@
-package com.leonardorifeli.contaazul.clock.api;
+package com.leonardorifeli.ca.clock.api;
 
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
