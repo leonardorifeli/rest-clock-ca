@@ -9,7 +9,7 @@ public class Time {
     private Integer minute;
     private Angle angle;
 
-    public Time(final Integer hour) throws IllegalArgumentException {
+    public Time(final Integer hour, final Integer minute) throws IllegalArgumentException {
         this.setHour(hour);
         this.setMinute(minute);
     }
