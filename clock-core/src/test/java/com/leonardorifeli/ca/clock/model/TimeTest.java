@@ -17,4 +17,9 @@ public class TimeTest
             assertTrue(false);
         }
     }
+
+    @Test
+    public void testValidMinute() {
+        assertTrue(false);
+    }
 }
