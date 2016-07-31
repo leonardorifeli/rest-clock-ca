@@ -10,7 +10,7 @@ public class TimeTest
     @Test
     public void testValidHour() {
         try {
-            Time time = new Time(13);
+            Time time = new Time(13, 0);
 
             assertTrue(true);
         } catch (IllegalArgumentException e) {
@@ -20,6 +20,12 @@ public class TimeTest
 
     @Test
     public void testValidMinute() {
-        assertTrue(true);
+        try {
+            Time time = new Time(13, -1);
+
+            assertTrue(true);
+        } catch (IllegalArgumentException e) {
+            assertTrue(false);
+        }
     }
 }
