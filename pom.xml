@@ -25,7 +25,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.jboss.resteasy</groupId>
+                <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
             <version>${resteasy-version}</version>
         </dependency>
@@ -54,7 +54,6 @@
             <version>${slf4j-version}</version>
         </dependency>
 
-        <!-- test deps -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
