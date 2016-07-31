@@ -1,16 +1,13 @@
 package com.leonardorifeli.ca.clock.model;
 
 import org.junit.Test;
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertTrue;
 
 public class TimeTest
 {
     @Test
-    public void testInvalidHour()
-    {
-        Time time = new Time();
-
-        time.Time(14, 15);
-
-        assertEquals("teste", "teste");
+    public void testInvalidHour() {
+        assertTrue(false);
     }
 }
