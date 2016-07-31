@@ -1,4 +1,4 @@
-package com.leonardorifeli.contaazul.clock.api;
+package com.leonardorifeli.ca.clock.api;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
