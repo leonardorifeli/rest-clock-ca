@@ -12,11 +12,11 @@ public class Angle {
     }
 
     @Override
-    public boolean equals(Object alfa) {
-        if (this == alfa) return true;
-        if (alfa == null || getClass() != alfa.getClass()) return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        Angle angle = (Angle) alfa;
+        Angle angle = (Angle) o;
 
         return getAngle().equals(angle.getAngle());
     }
