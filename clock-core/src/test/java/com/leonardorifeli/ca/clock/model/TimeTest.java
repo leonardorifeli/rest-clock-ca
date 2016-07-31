@@ -28,4 +28,9 @@ public class TimeTest
             assertTrue(false);
         }
     }
+
+    @Test
+    public void testValidAngle() {
+        assertTrue(false);
+    }
 }
