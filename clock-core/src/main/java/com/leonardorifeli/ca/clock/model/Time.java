@@ -11,14 +11,23 @@ public class Time {
 
     public Time(final Integer hour) throws IllegalArgumentException {
         this.setHour(hour);
+        this.setMinute(minute);
     }
 
     public void setHour(final Integer hour) throws IllegalArgumentException {
         if(hour == null || hour < 0) {
-            throw new IllegalArgumentException("Invalid value for hour");
+            throw new IllegalArgumentException("Invalid value for hour.");
         }
 
         this.hour = (hour > 12) ? 12 - (24 - hour) : hour;
+    }
+
+    public void setMinute(final Integer minute) throws IllegalArgumentException {
+        if(minute > 60 || minute < 0) {
+            throw new IllegalArgumentException("Invalud value for minute.");
+        }
+
+        this.minute = (minute == null) ? 0 : minute;
     }
 
     public Integer getHour() {
