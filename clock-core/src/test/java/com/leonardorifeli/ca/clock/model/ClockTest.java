@@ -32,7 +32,7 @@ public class ClockTest {
 
     @Test
     public void testAngle() {
-        Clock clock = new Clock(12, 15);
+        Clock clock = new Clock(3, 0);
 
         Angle angle = clock.getAngle();
 
@@ -41,7 +41,11 @@ public class ClockTest {
 
     @Test
     public void testZeroAngle() {
-        assertEquals(0, 90);
+        Clock clock = new Clock(12, 0);
+
+        Angle angle = clock.getAngle();
+
+        assertEquals(0.0, angle.getAngle());
     }
 
 }
