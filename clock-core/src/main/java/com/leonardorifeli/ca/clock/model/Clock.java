@@ -3,7 +3,7 @@ package com.leonardorifeli.ca.clock.model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Time {
+public class Clock {
 
     private Integer hour;
     private Integer minute;
