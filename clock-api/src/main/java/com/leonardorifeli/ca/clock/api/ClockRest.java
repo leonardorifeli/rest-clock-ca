@@ -51,13 +51,14 @@ public class ClockRest {
 
         if(DUMMY_CACHE.contains(key)) {
             angle = DUMMY_CACHE.get(key).getAngle();
-            return getResponseWithFormat(angle);
+            return getResponseWithFormat(angle.getAngle());
         }
 
         final Clock clock = new Clock(hour, minute);
         angle = clock.getAngle();
 
         LOG.debug("Angle for "+ clock + " is "+ angle.getAngle());
+        DUMMY_CACHE.put(key, clock);
 
         return getResponseWithFormat(angle.getAngle());
     }
