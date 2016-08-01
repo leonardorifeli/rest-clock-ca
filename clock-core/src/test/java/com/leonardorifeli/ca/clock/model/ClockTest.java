@@ -50,7 +50,13 @@ public class ClockTest {
 
     @Test
     public void testInvalidHour() {
-        assertTrue(true);
+        try {
+            Clock clock = new Clock(23, 0);
+
+            assertTrue(false);
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
     }
 
 }
