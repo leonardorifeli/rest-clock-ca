@@ -59,4 +59,9 @@ public class ClockTest {
         }
     }
 
+    @Test
+    public void testInvalidMinute() {
+        assertTrue(false);
+    }
+
 }
