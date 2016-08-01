@@ -48,4 +48,9 @@ public class ClockTest {
         assertEquals(0.0, angle.getAngle());
     }
 
+    @Test
+    public void testInvalidHour() {
+        assertTrue(false);
+    }
+
 }
