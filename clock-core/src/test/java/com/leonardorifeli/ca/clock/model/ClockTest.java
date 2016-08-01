@@ -31,6 +31,8 @@ public class ClockTest
 
     @Test
     public void testValidAngle() {
-        assertTrue(true);
+        Clock clock = new Clock(9, 0);
+
+        assertEquals(180, clock.getAngle());
     }
 }
