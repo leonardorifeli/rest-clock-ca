@@ -6,8 +6,8 @@ import org.junit.Test;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 
-public class ClockTest
-{
+public class ClockTest {
+
     @Test
     public void testValidHour() {
         try {
@@ -38,4 +38,5 @@ public class ClockTest
 
         assertEquals(90.0, angle.getAngle());
     }
+
 }

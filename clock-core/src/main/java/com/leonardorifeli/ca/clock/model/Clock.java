@@ -24,7 +24,7 @@ public class Clock {
 
     public void setMinute(final Integer minute) throws IllegalArgumentException {
         if(minute > 60 || minute < 0) {
-            throw new IllegalArgumentException("Invalud value for minute.");
+            throw new IllegalArgumentException("Invalid value for minute.");
         }
 
         this.minute = (minute == null) ? 0 : minute;
