@@ -74,15 +74,7 @@ public class Clock {
         return this.angle;
     }
 
-    private double calculateDegrees() throws IllegalArgumentException {
-        if(this.getHour() == null)  {
-            throw new IllegalArgumentException("Invalid hour.");
-        }
-
-        if(this.getMinute() == null)  {
-            throw new IllegalArgumentException("Invalid minute.");
-        }
-
+    private double calculateDegrees() {
         final double degrees = Math.abs((60 * this.getHour() - 11 * this.getMinute()) / 2.0);
 
         LOG.debug("Calculating angle for "+this+". Degrees: "+degrees);
