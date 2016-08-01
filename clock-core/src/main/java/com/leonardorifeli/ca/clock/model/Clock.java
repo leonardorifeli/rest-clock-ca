@@ -17,7 +17,7 @@ public class Clock {
     }
 
     public void setHour(final Integer hour) throws IllegalArgumentException {
-        if(hour == null || hour < 0) {
+        if(hour == null || hour < 0 || hour > 23) {
             throw new IllegalArgumentException("Invalid value for hour.");
         }
 
