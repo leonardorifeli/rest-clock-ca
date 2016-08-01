@@ -2,12 +2,14 @@ package com.leonardorifeli.ca.clock.model;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import sun.rmi.runtime.Log;
 
 public class Clock {
 
     private Integer hour;
     private Integer minute;
     private Angle angle;
+    private static Logger LOG = LoggerFactory.getLogger(Clock.class);
 
     public Clock(final Integer hour, final Integer minute) throws IllegalArgumentException {
         this.setHour(hour);
@@ -82,6 +84,8 @@ public class Clock {
         }
 
         final double degrees = Math.abs((60 * this.getHour() - 11 * this.getMinute()) / 2.0);
+
+        LOG.debug("Calculating angle for "+this+". Degrees: "+degrees);
 
         return validateDegrees(degrees);
     }
