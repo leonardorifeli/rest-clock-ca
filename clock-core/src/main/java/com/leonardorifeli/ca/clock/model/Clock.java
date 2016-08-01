@@ -25,7 +25,7 @@ public class Clock {
     }
 
     public void setMinute(final Integer minute) throws IllegalArgumentException {
-        if(minute > 60 || minute < 0) {
+        if(minute == null || minute > 59 || minute < 0) {
             throw new IllegalArgumentException("Invalid value for minute.");
         }
 
