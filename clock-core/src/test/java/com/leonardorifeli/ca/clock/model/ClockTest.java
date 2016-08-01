@@ -1,6 +1,7 @@
 package com.leonardorifeli.ca.clock.model;
 
 import com.leonardorifeli.ca.clock.model.Clock;
+import com.leonardorifeli.ca.clock.model.Angle;
 import org.junit.Test;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
@@ -30,9 +31,11 @@ public class ClockTest
     }
 
     @Test
-    public void testValidAngle() {
+    public void testAngle() {
         Clock clock = new Clock(9, 0);
 
-        assertEquals(180, clock.getAngle());
+        Angle angle = clock.getAngle();
+
+        assertEquals(90.0, angle.getAngle());
     }
 }
