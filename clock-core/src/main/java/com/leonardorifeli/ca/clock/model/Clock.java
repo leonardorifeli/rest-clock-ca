@@ -9,7 +9,7 @@ public class Clock {
     private Integer minute;
     private Angle angle;
 
-    public Time(final Integer hour, final Integer minute) throws IllegalArgumentException {
+    public Clock(final Integer hour, final Integer minute) throws IllegalArgumentException {
         this.setHour(hour);
         this.setMinute(minute);
     }
@@ -43,7 +43,7 @@ public class Clock {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Time time = (Time) o;
+        Clock time = (Clock) o;
 
         if (!getHour().equals(time.getHour())) return false;
 
@@ -65,7 +65,31 @@ public class Clock {
     }
 
     public Angle getAngle() {
+        if(this.angle != null) return this.angle;
+
+        this.angle = new Angle(this.calculateDegrees());
+
         return this.angle;
+    }
+
+    private double calculateDegrees() throws IllegalArgumentException {
+        if(this.getHour() == null)  {
+            throw new IllegalArgumentException("Invalid hour.");
+        }
+
+        if(this.getMinute() == null)  {
+            throw new IllegalArgumentException("Invalid minute.");
+        }
+
+        final double degrees = Math.abs((60 * this.getHour() - 11 * this.getMinute()) / 2.0);
+
+        return validateDegrees(degrees);
+    }
+
+    private double validateDegrees(final double degrees) {
+        if(degrees <= 180) return degrees;
+
+        return (360 - degrees);
     }
 
 }
