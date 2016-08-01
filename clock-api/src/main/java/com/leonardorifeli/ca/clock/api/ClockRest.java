@@ -48,7 +48,7 @@ public class ClockRest {
 
         LOG.debug("Angle for "+ clock + " is "+ angle.getAngle());
 
-        return Response.ok(angle).build();
+        return Response.ok("{\"angle\":"+ String.format( "%.0f", angle.getAngle() ) +"}\n").build();
     }
 
 }
