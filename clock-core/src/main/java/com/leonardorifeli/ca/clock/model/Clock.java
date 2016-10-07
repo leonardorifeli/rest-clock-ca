@@ -40,12 +40,16 @@ public class Clock {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+            
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         Clock time = (Clock) o;
 
-        if (!getHour().equals(time.getHour())) return false;
+        if (!getHour().equals(time.getHour()))
+            return false;
 
         return getMinute().equals(time.getMinute());
     }
@@ -65,7 +69,8 @@ public class Clock {
     }
 
     public Angle getAngle() {
-        if(this.angle != null) return this.angle;
+        if(this.angle != null)
+            return this.angle;
 
         this.angle = new Angle(this.calculateDegrees());
 
@@ -81,7 +86,8 @@ public class Clock {
     }
 
     private double validateDegrees(final double degrees) {
-        if(degrees <= 180) return degrees;
+        if(degrees <= 180)
+            return degrees;
 
         return (360 - degrees);
     }
