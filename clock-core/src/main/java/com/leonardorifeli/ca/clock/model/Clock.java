@@ -12,14 +12,13 @@ public class Clock {
     private static Logger LOG = LoggerFactory.getLogger(Clock.class);
 
     public Clock(final Integer hour, final Integer minute) throws IllegalArgumentException {
-        this.setHour(hour);
-        this.setMinute(minute);
+        setHour(hour);
+        setMinute(minute);
     }
 
     public void setHour(final Integer hour) throws IllegalArgumentException {
-        if(hour == null || hour < 0 || hour > 23) {
+        if(hour == null || hour < 0 || hour > 23)
             throw new IllegalArgumentException("Invalid value for hour.");
-        }
 
         this.hour = (hour > 12) ? 12 - (24 - hour) : hour;
     }
