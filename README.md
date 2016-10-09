@@ -35,7 +35,7 @@ How to start project?
 6. run: $ mvn tomcat7:run;
 7. run in other terminal session: $ curl http://localhost:8080/rest/clock/6/0 or access in your browser. Will return: {"angle":180}
 
-Ref: Clock angle problem
+References
 ========================
 
 * Clock Angle Problem: https://goo.gl/CgsI5M
