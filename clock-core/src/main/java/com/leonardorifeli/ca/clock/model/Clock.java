@@ -62,8 +62,8 @@ public class Clock {
 	}
 
 	private double calculateDegrees() {
-		LOG.debug("Calculating angle for "+this+". Degrees: "+degrees);
 		final double degrees = Math.abs(expressionToDegrees(this.getHour(), this.getMinute()));
+		LOG.debug("Calculating angle for "+this+". Degrees: "+degrees);
 		return validateDegrees(degrees);
 	}
 
