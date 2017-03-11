@@ -20,7 +20,7 @@ public class Clock {
         if(hour == null || hour < 0 || hour > 23)
             throw new IllegalArgumentException("Invalid value for hour.");
 
-        this.hour = (hour > 12) ? 12 - (24 - hour) : hour;
+        this.hour = getValidatedHour(hour);
     }
 
     public void setMinute(final Integer minute) throws IllegalArgumentException {
@@ -75,6 +75,14 @@ public class Clock {
         this.angle = new Angle(this.calculateDegrees());
 
         return this.angle;
+    }
+
+    private Integer getValidatedHour(Integer hour) {
+        return (hour > 12) ? 12 - (24 - hour) : hour;
+    }
+
+    private Integer getCalculatedHour(Integer hour) {
+        return 12 - (24 - hour);
     }
 
     private double calculateDegrees() {
