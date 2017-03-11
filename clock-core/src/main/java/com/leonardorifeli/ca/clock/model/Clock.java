@@ -9,6 +9,7 @@ public class Clock {
 	private Integer hour;
 	private Integer minute;
 	private Angle angle;
+	private static int COMPLETE_CIRCLE_DEGREES = 360;
 	private static Logger LOG = LoggerFactory.getLogger(Clock.class);
 
 	public Clock(final Integer hour, final Integer minute) throws IllegalArgumentException {
@@ -39,31 +40,6 @@ public class Clock {
 	}
 
 	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-			
-		if (o == null || getClass() != o.getClass())
-			return false;
-
-		Clock time = (Clock) o;
-
-		if (!getHour().equals(time.getHour()))
-			return false;
-
-		return getMinute().equals(time.getMinute());
-	}
-
-	@Override
-	public int hashCode() {
-		int result = getHour().hashCode();
-
-		result = 31 * result + getMinute().hashCode();
-
-		return result;
-	}
-
-	@Override
 	public String toString() {
 		return "Time{hour=" + this.hour + ", minutes=" + this.minute + "}";
 	}
@@ -86,18 +62,19 @@ public class Clock {
 	}
 
 	private double calculateDegrees() {
-		final double degrees = Math.abs((60 * this.getHour() - 11 * this.getMinute()) / 2.0);
-
 		LOG.debug("Calculating angle for "+this+". Degrees: "+degrees);
-
+		final double degrees = Math.abs(expressionToDegrees(this.getHour(), this.getMinute()));
 		return validateDegrees(degrees);
 	}
 
-	private double validateDegrees(final double degrees) {
-		if(degrees <= 180)
-			return degrees;
+	private double getExpressionToDegrees(hour, minute) {
+		return (60 * hour - 11 * minute) / 2.0;
+	}
 
-		return (360 - degrees);
+	private double validateDegrees(final double degrees) {
+		if(degrees <= (COMPLETE_CIRCLE_DEGREES/2))
+			return degrees;
+		return (COMPLETE_CIRCLE_DEGREES - degrees);
 	}
 
 }
