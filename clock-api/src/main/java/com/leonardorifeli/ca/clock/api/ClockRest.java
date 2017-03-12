@@ -18,7 +18,6 @@ import javax.ws.rs.core.Response;
 @Produces("application/json")
 public class ClockRest {
 
-	private static Logger LOG = LoggerFactory.getLogger(ClockRest.class);
 	private static final DummyCache<String, Clock> DUMMY_CACHE = DummyCacheProvider.getCache();
 
 	@GET
@@ -36,16 +35,6 @@ public class ClockRest {
 	}
 
 	private Response getAngle(final Integer hour, final Integer minute) {
-		if(hour < 0 || hour > 23) {
-			LOG.warn("Invalid value for hour: "+ hour);
-			return Response.status(400).build();
-		}
-
-		if(minute < 0 || minute > 59) {
-			LOG.warn("Invalid value for minutes: "+ minute);
-			return Response.status(400).build();
-		}
-
 		final String key = this.getCacheKey(hour, minute);
 		final Angle angle;
 
